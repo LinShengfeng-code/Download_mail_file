@@ -25,8 +25,8 @@ from email.utils import parseaddr, formataddr
  
  
 # 输入邮件地址, 口令和POP3服务器地址:
-email = '475094638@qq.com'
-password = 'wjxwvzhqaynqbhji'
+email = 'xxxxxx@qq.com' # QQ邮箱账号
+password = 'xxxxxxxx' # QQ邮箱提供的密钥
 pop3_server = 'pop.qq.com'
 smtp_server = 'smtp.qq.com'
  
@@ -123,12 +123,6 @@ for i in range(index,0,-1):
     date2 = time.strftime("%Y%m%d", date1)#邮件时间格式转换
     if (date2<'20210702')|(date2>'20210709'):
         continue
-    # f_list = get_att(msg)#获取附件
-    target_mail_addr = parse_mail_addr(msg.get('From'))
-    send_hello(email,target_mail_addr,password,smtp_server)
-    
-        
-    
-    #print_info(msg)
+    f_list = get_att(msg) # 获取附件
  
 server.quit()
